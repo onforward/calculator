@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Simple Calculator</title>
+    <script src="https://kit.fontawesome.com/efd06b8b09.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="./icons/calculator.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+</head>
+
+<body>
+    <div class="container">
+        <div>
+            <input type="checkbox" class="checkbox" id="themeToggler">
+            <label class="label" for="themeToggler">
+                <i class="fas fa-moon"></i>
+                <i class="fas fa-sun"></i>
+                <div class="ball"></div>
+            </label>
+        </div>
+        <div class="calculator">
+            <div class="calculator__item item--input">0</div>
+            <button class="calculator__item item--reset" onclick="reset()">C</button>
+            <button class="calculator__item item--back" onclick="back()">⌫</button>
+            <button class="calculator__item item--operator" onclick="insert('+')">+</button>
+            <button class="calculator__item item--operator" onclick="insert('-')">-</button>
+            <button class="calculator__item item--operator" onclick="insert('*')">&times;</button>
+            <button class="calculator__item item--operator" onclick="insert('/')">&divide;</button>
+            <button class="calculator__item item--number" onclick="insert('7')">7</button>
+            <button class="calculator__item item--number" onclick="insert('8')">8</button>
+            <button class="calculator__item item--number" onclick="insert('9')">9</button>
+            <button class="calculator__item item--operator" onclick="insert('(')">(</button>
+            <button class="calculator__item item--number" onclick="insert('4')">4</button>
+            <button class="calculator__item item--number" onclick="insert('5')">5</button>
+            <button class="calculator__item item--number" onclick="insert('6')">6</button>
+            <button class="calculator__item item--operator" onclick="insert(')')">)</button>
+            <button class="calculator__item item--number" onclick="insert('1')">1</button>
+            <button class="calculator__item item--number" onclick="insert('2')">2</button>
+            <button class="calculator__item item--number" onclick="insert('3')">3</button>
+            <button class="calculator__item item--equal" onclick="equal()">=</button>
+            <button class="calculator__item item--zero item--number" onclick="insert('0')">0</button>
+            <button class="calculator__item item--operator" onclick="insert('.')">.</button>
+        </div>
+    </div>
+
+</body>
+
+</html>

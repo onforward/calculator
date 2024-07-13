@@ -1,0 +1,189 @@
+body {
+    margin: 0;
+    user-select: none;
+    background: rgb(233, 9, 145);
+    background: linear-gradient(90deg, rgba(233, 9, 145, 1) 0%, rgba(231, 9, 146, 1) 2%, rgba(81, 0, 255, 0.8436624649859944) 100%);
+}
+
+.checkbox {
+    opacity: 0;
+    position: absolute;
+    /* top: 0;
+    left: 0; */
+}
+
+.label {
+    background-color: #fff;
+    border-radius: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    position: relative;
+    height: 22px;
+    width: 50px;
+}
+
+.label .ball {
+    background-color: #000;
+    border-radius: 50%;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 25px;
+    aspect-ratio: 1;
+    transform: translateX(0px);
+    transition: transform 0.3s linear;
+}
+
+.checkbox:checked+.label .ball {
+    transform: translateX(30px);
+}
+
+.fa-moon {
+    color: #f1c40f;
+}
+
+.fa-sun {
+    color: #f39c12;
+}
+
+
+.container {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 20px;
+}
+
+.calculator {
+    box-sizing: border-box;
+    background-color: #fafafa;
+    color: #000;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    padding: 15px;
+    max-width: 360px;
+    width: 100%;
+    transition: background-color 0.3s linear;
+    box-shadow: 5px 5px 20px #000,
+        -5px -5px 20px #000;
+}
+
+.calculator__item {
+    border-radius: 30px;
+    color: #000;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 20px;
+    border: none;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s linear;
+}
+
+
+@media (hover: hover) {
+    .calculator__item:not(:first-child):hover {
+        transform: scale(1.1);
+        opacity: 0.7;
+    }
+}
+
+.item--number {
+    background-color: #B3E5FC;
+    color: #000;
+}
+
+.item--operator {
+    background-color: #ffd0fd;
+    color: #f967f3;
+}
+
+.item--reset {
+    background-color: #ffd5d8;
+    color: #fc4552;
+}
+
+.item--back {
+    background-color: #adf9e7;
+    color: #000;
+}
+
+.item--equal {
+    background-color: #adf9e7;
+    color: #000;
+    grid-row: span 2;
+}
+
+.item--input {
+    background-color: #fafafa;
+    color: #000;
+    font-size: 30px;
+    grid-column: 1 / -1;
+    padding: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.item--reset,
+.item--back,
+.item--zero {
+    grid-column: span 2;
+}
+
+
+/* Dark theme */
+body.dark .calculator {
+    background-color: #071115;
+    box-shadow: 5px 5px 20px #fff,
+        -5px -5px 20px #fff;
+}
+
+body.dark .item--input {
+    background-color: #071115;
+    color: #f8fafd;
+}
+
+body.dark .item--number {
+    background-color: #1b2f38;
+    color: #f8fafb;
+}
+
+body.dark .item--operator {
+    background-color: #2e1f39;
+    color: #aa00a4;
+}
+
+body.dark .item--reset {
+    background-color: #2d191e;
+    color: #bd3740;
+}
+
+body.dark :is(.item--equal, .item--back) {
+    background-color: #223323;
+    color: #ffffff;
+}
+
+body.dark .label {
+    background-color: #000;
+}
+
+body.dark .ball {
+    background-color: #fff;
+}
+
+@media (width < 420px) {
+    .calculator {
+        max-width: 320px;
+    }
+}
